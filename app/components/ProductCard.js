@@ -1,0 +1,54 @@
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import "boxicons/css/boxicons.min.css";
+
+export function ProductCard({ image, title, description }) {
+  return (
+    <Card className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-amber-400 hover:shadow-[0_25px_60px_rgba(233,155,99,0.25)]">
+      <CardHeader
+        shadow={false}
+        floated={false}
+        className="relative mx-5 mt-5 h-56 overflow-hidden rounded-2xl bg-gray-100"
+      >
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      </CardHeader>
+
+      <CardBody className="flex flex-1 flex-col gap-4 px-6 pb-6 text-center">
+        <Typography
+          variant="h5"
+          className="font-display text-2xl font-semibold uppercase tracking-wide text-amber-500"
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant="small"
+          className="text-sm leading-relaxed text-gray-600"
+        >
+          {description}
+        </Typography>
+      </CardBody>
+
+      <CardFooter className="border-t border-gray-200 bg-gray-50 px-6 py-4">
+        {/* dark mode removed here */}
+        <Button
+          ripple={true}
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500/90 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition-colors duration-200 hover:bg-amber-400"
+        >
+          Learn more
+          <i className="bx bx-right-arrow-alt text-lg" aria-hidden="true"></i>
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}

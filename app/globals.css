@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@layer base {
+
+  body{
+    @apply relative min-h-screen bg-black opacity-100 font-sans text-white overflow-x-hidden;
+  }
+
+  
+.font-helvetica-world {
+  font-family: var(--font-helvetica-world), "Helvetica Neue", Arial, sans-serif;
+}
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+}
