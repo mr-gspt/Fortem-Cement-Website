@@ -126,7 +126,7 @@ const Header = () => {
         {/* dark mode removed here */}
         <Link
           className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-gray-900 transition-all duration-300 hover:bg-amber-400"
-          href="/#contact"
+          href="/about/#contact"
         >
           Contact
         </Link>

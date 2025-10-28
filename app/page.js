@@ -72,7 +72,7 @@ export default function Home() {
       <img className="absolute top-0 left-0 -z-10 h-screen w-full object-cover opacity-50" src="/Gallery/test06.jpg" alt="background.img" />
       </div>
       </div>
-      {/* dark mode removed here */}
+    
       <Header />
       <Hero />
       <br/>
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
       </section>
       
-      <Contactsection/>
+      {/* <Contactsection/> */}
       
       <Footer />
     </main>

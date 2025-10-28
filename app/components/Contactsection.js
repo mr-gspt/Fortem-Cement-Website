@@ -112,6 +112,7 @@ const Contactsection = () => {
                 required
                 className={inputClasses}
                 placeholder="Full name"
+                autoComplete="name"
               />
             </div>
 
@@ -128,6 +129,7 @@ const Contactsection = () => {
                 required
                 className={inputClasses}
                 placeholder="you@example.com"
+                autoComplete="email"
               />
             </div>
 
@@ -143,6 +145,7 @@ const Contactsection = () => {
                 required
                 className={`h-36 resize-none ${inputClasses}`}
                 placeholder="How can we help?"
+                autoComplete="off"
               />
             </div>
 
