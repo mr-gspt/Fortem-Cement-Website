@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { DefaultGallery } from "./components/DefaultGallery";
 import { ProductCard } from "./components/ProductCard";
 import Footer from "./components/Footer.js";
-import Contactsection from "./components/Contactsection.js";
 import Certification from "./components/Certification.js";
 import Carousel from "./components/Carousel.js";
 import { PartnerBrands } from "./components/PartnerBrand.js";

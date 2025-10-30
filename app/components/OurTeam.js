@@ -11,19 +11,19 @@ const teamHighlights = [
 
 const teamPhotos = [
   {
-    src: "https://placehold.co/600x450/png",
+    src: "/OurTeam/OurTeam1.png",
     alt: "Team photo 1 placeholder",
   },
   {
-    src: "https://placehold.co/600x450/png",
+    src: "/OurTeam/OurTeam2.png",
     alt: "Team photo 2 placeholder",
   },
   {
-    src: "https://placehold.co/600x450/png",
+    src: "/OurTeam/OurTeam3.png",
     alt: "Team photo 3 placeholder",
   },
   {
-    src: "https://placehold.co/600x450/png",
+    src: "/OurTeam/OurTeam4.png",
     alt: "Team photo 4 placeholder",
   },
 ];
@@ -47,7 +47,8 @@ const Ourteam = () => {
           </ul>
         </div>
 
-        <div className="grid flex-1 gap-6 sm:grid-cols-2">
+        <div className="grid flex-1 gap-3 sm:grid-cols-2"
+        data-aos="fade-up">
           {teamPhotos.map((photo, index) => (
             <figure
               key={photo.alt + index}
@@ -57,7 +58,7 @@ const Ourteam = () => {
                 src={photo.src}
                 alt={photo.alt}
                 loading="lazy"
-                className="h-56 w-full object-cover sm:h-64"
+                className="h-60 w-full object-cover sm:h-70"
               />
             </figure>
           ))}

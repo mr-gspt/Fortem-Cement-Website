@@ -139,7 +139,6 @@ export default function AboutPage() {
         </div>
       </section>
       <Contactsection/>
-
       <Footer />
     </main>
   );

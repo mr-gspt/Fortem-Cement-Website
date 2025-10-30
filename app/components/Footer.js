@@ -12,10 +12,10 @@ const navigationLinks = [
 
 // Unique labels keep React list keys stable and silence console warnings.
 const resourceLinks = [
-  { label: "Example 1", href: "#resources" },
-  { label: "Example 2", href: "#resources" },
-  { label: "Example 3", href: "#resources" },
-  { label: "Example 4", href: "#resources" },
+  { label: "Video", href: "#resources" },
+  { label: "Vlogs", href: "#resources" },
+  { label: "News", href: "#resources" },
+  { label: "Media", href: "#resources" },
 ];
 
 const socialLinks = [
