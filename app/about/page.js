@@ -50,10 +50,10 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="relative min-h-screen  bg-black/10">
+    <main className="relative min-h-screen  bg-white">
       
       <Header />
-      <div className="mx-auto flex w-full max-w-6xl px-6 pt-6">
+      <div className="mx-auto flex w-full max-w-[90rem] px-6 pt-6">
         <Breadcrumb
           items={[
             { href: "/about", label: "About Us" },

@@ -105,7 +105,7 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-white text-white">
       <Header />
-      <div className="mx-auto flex w-full max-w-5xl px-6 pt-6">
+      <div className="mx-auto flex w-full max-w-[90rem] px-6 pt-6">
         <Breadcrumb
           items={[
             { href: "/careers", label: "Careers" },

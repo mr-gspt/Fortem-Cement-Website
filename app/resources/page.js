@@ -56,12 +56,12 @@ const ResourcesSection = () => {
   return (
     <main>
       <Header />
-      <div className="mx-auto flex w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-10">
+      <div className="mx-auto flex w-full max-w-[90rem] px-4 pt-6 sm:px-6 lg:px-10">
         <Breadcrumb items={[{ href: "/resources", label: "Resources" }]} />
       </div>
 
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-10">
           {/* Page Header */}
           <div className="text-center">
             <h1 className="font-display text-3xl font-semibold uppercase tracking-tight text-yellow-600 md:text-4xl">

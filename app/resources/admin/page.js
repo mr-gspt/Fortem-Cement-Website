@@ -5,8 +5,6 @@ import { useEffect, useState, useMemo } from "react";
 import {
   UploadCloud,
   FileText,
-  Image as ImageIcon,
-  Video,
   Link2,
   Search,
 } from "lucide-react";
