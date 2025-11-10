@@ -10,6 +10,7 @@ const sizes = [
 
 const PlaywoodTb = () => {
   return (
+    <main>
     <section className="py-15">
     <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border-4 border-yellow-500 shadow-lg">
     <header className="grid grid-cols-4 place-items-center bg-yellow-500 px-6 py-4 text-lg font-semibold text-white">
@@ -31,6 +32,28 @@ const PlaywoodTb = () => {
     </ul>
   </div>
   </section>
+  <section className="text-gray-600 body-font">
+  <div className="container py-10 flex flex-wrap">
+    <div className="lg:w-2/3 mx-auto">
+      <div className="flex flex-wrap w-full bg-gray-100 py-50 px-10 relative mb-4">
+        <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/820x340"/>
+      </div>
+      <div className="flex flex-wrap -mx-2">
+        <div className="px-2 w-1/2">
+          <div className="flex flex-wrap w-full bg-gray-100 sm:py-40 py-16 sm:px-10 px-6 relative">
+            <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x460"/>
+          </div>
+        </div>
+        <div className="px-2 w-1/2">
+          <div className="flex flex-wrap w-full bg-gray-100 sm:py-40 py-16 sm:px-10 px-6 relative">
+            <img alt="gallery" className="w-full object-cover h-full object-center block opacity-25 absolute inset-0" src="https://dummyimage.com/542x420"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
   )
 }
 

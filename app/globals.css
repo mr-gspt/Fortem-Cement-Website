@@ -5,14 +5,28 @@
   body{
     @apply relative min-h-screen bg-black opacity-100 font-sans text-white overflow-x-hidden;
   }
-
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
   
 .font-helvetica-world {
   font-family: var(--font-helvetica-world), "Helvetica Neue", Arial, sans-serif;
 }
-  /* Smooth scrolling for anchor links */
-  html {
-    scroll-behavior: smooth;
+.clip-diagonal-right {
+  clip-path: polygon(0 0,100% 0,90% 100%, 0 100%);
+}
+
+.clip-diagonal-right2 {
+  clip-path: polygon(0 0,95% 0,90% 100%, 0 100%);
+}
+
+
+@media (min-width: 768px){
+  .clip-diagonal-right-md {
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%)
   }
+}
+
 
 }

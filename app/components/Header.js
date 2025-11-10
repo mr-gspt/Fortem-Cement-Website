@@ -95,15 +95,15 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 flex w-full items-center justify-between border-b border-gray-200 px-4 py-4 text-gray-900 transition-all duration-300 md:px-10 lg:px-20 ${
-        isScrolled ? "bg-white/90 shadow-md backdrop-blur" : "bg-white/70 backdrop-blur-sm"
+      className={`sticky top-0 z-50 flex w-full items-center justify-between border-b border-black-200 px-4 py-1 text-gray-900 transition-all duration-300 md:px-10 lg:px-20 ${
+        isScrolled ? "bg-black/90 shadow-md backdrop-blur" : "bg-black/90 backdrop-blur-sm"
       } ${isNavHidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}
     >
 
       <Link href="/">
         <img
-          className="m-1 h-15 w-55 shrink-0 cursor-pointer"
-          src="/FORTEM NO LOGO.png"
+          className="m-1 h-15 w-15 shrink-0 cursor-pointer"
+          src="/Gallery/logo.png"
           alt="fc logo"
         />
       </Link>
@@ -113,7 +113,7 @@ const Header = () => {
         {NAV_LINKS.map(({ href, label }) => (
           <Link
             key={href}
-            className="group relative text-xs font-medium uppercase tracking-[0.18em] text-gray-700 transition-colors duration-300 hover:text-yellow-600 lg:text-sm"
+            className="group relative text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:text-yellow-500 lg:text-sm"
             href={href}
           >
             {label}
@@ -125,20 +125,21 @@ const Header = () => {
       <div className="hidden items-center gap-4 lg:flex">
         {/* dark mode removed here */}
         <Link
-          className="rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-gray-900 transition-all duration-300 hover:bg-amber-400"
+          className="rounded-full bg-yellow-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-amber-400"
           href="/about/#contact"
         >
           Contact
         </Link>
       </div>
-
+      
+{/* Mobile Menu - Hidden by default */}
       <button
         onClick={toggleMobileMenu}
         aria-label="Toggle navigation"
         aria-expanded={isMobileOpen}
-        className="z-50 rounded-full p-2 text-3xl transition hover:bg-yellow-100 focus:outline-none focus:ring-2 focus:ring-yellow-300 lg:hidden"
+        className="z-50 rounded-full p-2 text-3xl transition hover:bg-yellow-100 focus:outline-none focus:ring-2 focus:ring-[#eaaa00] lg:hidden"
       >
-        <i className="bx bx-menu-alt-right"></i>
+        <i className="bx bx-menu-alt-right text-white"></i>
       </button>
 
       {/* Mobile Menu - Hidden by default */}
@@ -165,7 +166,7 @@ const Header = () => {
         </nav>
 
         <Link
-          className="mt-10 block rounded-full bg-amber-500 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-gray-900 transition-all duration-300 hover:bg-amber-400"
+          className="mt-10 block rounded-full bg-[#eaaa00]  px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-gray-900 transition-all duration-300 hover:bg-amber-300"
           href="/#contact"
           onClick={() => setIsMobileOpen(false)}
         >

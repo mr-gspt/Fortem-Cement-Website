@@ -2,9 +2,7 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Typography,
-  Button,
 } from "@material-tailwind/react";
 import "boxicons/css/boxicons.min.css";
 
@@ -38,17 +36,6 @@ export function ProductCard({ image, title, description }) {
           {description}
         </Typography>
       </CardBody>
-
-      <CardFooter className="border-t border-gray-200 bg-gray-50 px-6 py-4">
-        {/* dark mode removed here */}
-        <Button
-          ripple={true}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500/90 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition-colors duration-200 hover:bg-amber-400"
-        >
-          Learn more
-          <i className="bx bx-right-arrow-alt text-lg" aria-hidden="true"></i>
-        </Button>
-      </CardFooter>
     </Card>
   );
 }

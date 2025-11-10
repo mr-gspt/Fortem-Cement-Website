@@ -211,6 +211,8 @@ export default function ResourcesAdminPage() {
             <label className="flex flex-col sm:col-span-2">
               <span className="text-sm font-medium text-gray-700">Title</span>
               <input
+                id="resource-title"
+                name="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="mt-1 rounded-lg border border-gray-300 p-2 text-sm"
@@ -374,7 +376,7 @@ export default function ResourcesAdminPage() {
                         <div className="text-sm text-gray-500">
                           {r.type} •{" "}
                           {r.created_at
-                            ? new Date(r.created_at).toLocaleString()
+                            ? new Date(r.created_at).toLocaleString("en-PH", { timeZone: "Asia/Manila" })
                             : ""}
                         </div>
                       </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export function DefaultGallery() {
     const data = [
       { imageLink: "/Gallery/brand1.png" },
@@ -32,11 +34,14 @@ export function DefaultGallery() {
           {data.map(({ imageLink }, index) => (
             <div
               key={index}
-              className="w-full max-w-md overflow-hidden rounded-xl bg-white shadow-lg transition-transform duration-300 hover:scale-105"
+              className="w-full max-w-md overflow-hidden rounded-xl bg-white shadow-lg transition-transform transform-gpu will-change-transform duration-300 hover:scale-105"
             >
-              <img
+              <Image
                 src={imageLink}
                 alt={`gallery-photo-${index}`}
+                width={480}
+                height={288}
+                loading="lazy"
                 className="h-72 w-full bg-white object-cover"
               />
             </div>

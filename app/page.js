@@ -66,11 +66,11 @@ export default function Home() {
   return (
     <main className="relative">
       {/* Background Image*/}
-      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-black/100">
-      <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-orange-400/20">
-      <img className="absolute top-0 left-0 -z-10 h-screen w-full object-cover opacity-50" src="/Gallery/test06.jpg" alt="background.img" />
-      </div>
-      </div>
+      {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-gradient-to-r from-gray-800 via-gray-800 to-gray-200 "> */}
+      {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-yellow-500/15"> */}
+      <img className="absolute top-0 left-0 -z-10 h-screen w-full object-cover opacity-100" src="/Gallery/bg-buildings.png" alt="background.img" />
+      {/* </div> */}
+      {/* </div> */}
     
       <Header />
       <Hero />
@@ -81,11 +81,11 @@ export default function Home() {
       <PartnerBrands/>
 
       <section id="products" className="relative mx-auto mt-24 w-full max-w-6xl px-6">
-        <div className="absolute inset-0 -z-10 mx-auto h-full max-w-6xl rounded-[3rem] bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10 blur-3xl" />
 
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white/80 px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.2)] backdrop-blur-xl sm:px-12">
+
+        {/* <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white/80 px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.2)] backdrop-blur-xl sm:px-12"> */}
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-4xl font-bold uppercase text-amber-400">
+            <span className="text-4xl font-bold uppercase text-yellow-500">
               OUR PRODUCT
             </span>
             <p className="mt-4 text-sm text-gray-600 md:text-base">
@@ -106,7 +106,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        {/* </div> */}
       </section>
 
       <br/>

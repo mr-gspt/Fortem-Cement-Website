@@ -26,31 +26,35 @@ const socialLinks = [
 
 const contactDetails = [
   { label: "Head Office", value: "China Plaza Condominium 1017 Tambacan, Santa Cruz Manila, 1008 Metro Manila" },
-  { label: "Phone", value: "+63 912 345 6789", href: "tel:+639123456789" },
-  { label: "Email", value: "hello@fortem.com", href: "mailto:hello@fortem.com" },
+  {
+    label: "Phone",
+    values: [
+      { text: "+63 956 594 2667", href: "tel:+639565942667" },
+      { text: "+63 968 669 6948", href: "tel:+639686696948" },
+    ],
+  },
+  { label: "Email", value: "info@fortem.ph", href: "mailto:info@fortem.ph" },
 ];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="border-t border-gray-200 bg-gray-50 text-sm text-gray-600">
-      <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-6 md:px-8 md:py-12">
+    <footer id="footer" className="border-t border-gray-200 bg-black text-sm text-white">
+      <div className="mx-auto w-full max-w-7xl px-5 py-10 sm:px-6 md:px-8 md:py-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_repeat(3,minmax(0,1fr))]">
           <div className="space-y-5">
             {/* Simple brand block so you can swap the Fortem PNG anytime */}
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <Image
-                src="/Gallery/logo.png"
+                src="/FORTEM NO LOGO.png"
                 alt="Fortem logo"
-                width={48}
-                height={48}
+                width={230}
+                height={100}
                 priority
+                href="/"
               />
               <div>
-                <p className="text-xs font-semibold uppercase text-yellow-600">
-                  Fortem Cement Corporation
-                </p>
               </div>
             </div>
             <ul className="flex flex-wrap items-center gap-3">
@@ -59,7 +63,7 @@ const Footer = () => {
                   <a
                     href={href}
                     aria-label={label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition-colors hover:border-yellow-500 hover:text-yellow-500"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-white transition-colors hover:border-[#eaaa00] hover:text-[#eaaa00]"
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noreferrer" : undefined}
                   >
@@ -71,13 +75,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.10em] text-yellow-600">Navigate</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.10em] text-[#eaaa00]">Navigate</h3>
             <ul className="mt-4 space-y-2.5">
               {navigationLinks.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-gray-600 transition-colors hover:text-yellow-500"
+                    className="text-white transition-colors hover:text-[#eaaa00]"
                   >
                     {label}
                   </a>
@@ -87,13 +91,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.10em] text-yellow-600">Resources</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.10em] text-[#eaaa00]">Resources</h3>
             <ul className="mt-4 space-y-2.5">
               {resourceLinks.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-gray-600 transition-colors hover:text-yellow-500"
+                    className="text-white transition-colors hover:text-[#eaaa00]"
                   >
                     {label}
                   </a>
@@ -103,22 +107,34 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.10em] text-yellow-600">Contact</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.10em] text-[#eaaa00]">Contact</h3>
             <ul className="mt-4 space-y-4 text-gray-600">
-              {contactDetails.map(({ label, value, href }) => (
-                <li key={label}>
-                  <span className="block text-[0.7rem] uppercase tracking-[0.3em] text-gray-500">
+              {contactDetails.map(({ label, value, values, href }, index) => (
+                <li key={`${label}-${index}`}>
+                  <span className="block text-[0.7rem] uppercase tracking-[0.3em] text-white">
                     {label}
                   </span>
-                  {href ? (
+                  {values ? (
+                    <div className="mt-1 space-y-1">
+                      {values.map(({ text, href: itemHref }) => (
+                        <a
+                          key={`${label}-${text}`}
+                          href={itemHref}
+                          className="block text-base text-white transition-colors hover:text-yellow-500"
+                        >
+                          {text}
+                        </a>
+                      ))}
+                    </div>
+                  ) : href ? (
                     <a
                       href={href}
-                      className="mt-1 block text-base text-gray-900 transition-colors hover:text-yellow-500"
+                      className="mt-1 block text-base text-white transition-colors hover:text-yellow-500"
                     >
                       {value}
                     </a>
                   ) : (
-                    <span className="mt-1 block text-base text-gray-900">{value}</span>
+                    <span className="mt-1 block text-base text-white">{value}</span>
                   )}
                 </li>
               ))}
@@ -130,7 +146,7 @@ const Footer = () => {
       <div className="border-t border-gray-200 bg-gray-100">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-5 text-gray-500 sm:px-6 md:flex-row md:items-center md:justify-between md:px-8">
           <p className="text-center text-sm text-gray-500 md:text-left">
-            <span className="text-yellow-600">&copy; {currentYear}</span> Fortem Cement Corporation. All rights reserved.
+            <span className="text-[#eaaa00]">&copy; {currentYear}</span> Fortem Cement Corporation. All rights reserved.
           </p>
         </div>
       </div>

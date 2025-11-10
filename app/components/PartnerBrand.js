@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export function PartnerBrands() {
     const data = [
       { imageLink: "/Gallery/Kalsi.png" },
@@ -9,7 +11,7 @@ export function PartnerBrands() {
     ];
   
     return (
-        <section id="ourbrand" data-aos="fade-down" className="w-full py-12">
+        <section id="partnerbrand" data-aos="fade-down" className="w-full py-12">
       <div className="mx-auto max-w-7xl px-6">
       <div className="text-center">
         <div className="relative mt-6 inline-block px-3 sm:px-5">
@@ -24,11 +26,14 @@ export function PartnerBrands() {
           {data.map(({ imageLink }, index) => (
             <div
               key={index}
-              className="w-full max-w-md overflow-hidden rounded-xl bg-white shadow-lg transition-transform duration-300 hover:scale-105"
+              className="w-full max-w-md overflow-hidden rounded-xl bg-white shadow-lg transition-transform transform-gpu will-change-transform duration-300 hover:scale-105"
             >
-              <img
+              <Image
                 src={imageLink}
                 alt={`gallery-photo-${index}`}
+                width={480}
+                height={288}
+                loading="lazy"
                 className="h-72 w-full bg-white object-cover"
               />
             </div>
