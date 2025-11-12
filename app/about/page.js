@@ -66,7 +66,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12" data-aos="fade-up">
           
-            <h1 className="font-bold uppercase text-center text-yellow-500 sm:text-5xl lg:text-5xl">
+            <h1 className="font-bold uppercase text-center text-[#eaaa00] text-4xl sm:text-5xl lg:text-5xl">
             ABOUT US
             </h1>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -77,14 +77,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16" data-aos="fade-up">
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-semibold text-yellow-500 mb-4">Mission</h2>
+                <h2 className="text-5xl font-semibold text-[#eaaa00] mb-4">Mission</h2>
                 <p className="text-gray-600 leading-relaxed text-lg">
                 To build a responsive, proactive, and reliable distribution network that empower our partners to grow with confidence.
                 </p>
               </div>
               
               <div>
-                <h2 className="text-3xl font-semibold text-yellow-500 mb-4">Vision</h2>
+                <h2 className="text-5xl font-semibold text-[#eaaa00] mb-4">Vision</h2>
                 <p className="text-gray-600 leading-relaxed text-lg">
                 To become the preferred supplier of construction materials in the Philippines and the Asia-Pacific region.
                 </p>
@@ -104,7 +104,7 @@ export default function AboutPage() {
           {/* Core Values */}
           <div className="container px-5 py-24 mx-auto">
 
-            <h1 className="font-helvetica-world font-bold text-center text-yellow-500 sm:text-5xl lg:text-5xl py-1">Customer promise & Core Values</h1>
+            <h1 className="font-helvetica-world font-bold text-center text-yellow-500 text-4xl sm:text-5xl lg:text-5xl py-1">Customer promise & Core Values</h1>
             <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
             We promise to delivery quality, competitive pricing, and consistent supply placing the needs of our partners and customers at the heart of everything we do.
             </p>

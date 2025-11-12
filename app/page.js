@@ -9,7 +9,7 @@ import { ProductCard } from "./components/ProductCard";
 import Footer from "./components/Footer.js";
 import Certification from "./components/Certification.js";
 import Carousel from "./components/Carousel.js";
-import { PartnerBrands } from "./components/PartnerBrand.js";
+import Fortemseal from "./components/Fortemseal.js";
 
 
 export default function Home() {
@@ -18,19 +18,19 @@ export default function Home() {
       image: "/Gallery/test01.jpg", // or remote image
       title: "Cement",
       description:
-        "Our cement is sourced from top grade factories in China, Indonesia & Vietnam. All products are DTI & DPWH accredited.",
+        "The backbone of every build. Our cement portfolio is engineered for reliable performance, consistent quality, and improved workability. A solid foundation and lasting strength for every project.",
     },
     {
       image: "/Gallery/test07.jpg",
       title: "Plywood",
       description:
-        "Our plywood is directly sourced from top grade suppliers in China. Right grade, size & quality to your requirement. Only sourcing DTI approved quality plywood.",
+        "Precision, stability, and finish. Our boards provide versatile solutions for general construction and industrial applications. Engineered for both residential and commercial applications, they help achieve cleaner builds and long-term reliability.",
     },
     {
       image: "/Gallery/test13.jpg",
       title: "Admix",
       description:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit dolorum amet dolores praesentium, alias nam? Tempore",
+        "Performance that enhances every mix. Formulated to improve concrete quality and consistency. From water reduction to enhanced strength and workability, our Admix line ensures efficiency and performance on every pour.",
     },
   ];
 
@@ -68,7 +68,7 @@ export default function Home() {
       {/* Background Image*/}
       {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-gradient-to-r from-gray-800 via-gray-800 to-gray-200 "> */}
       {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-yellow-500/15"> */}
-      <img className="absolute top-0 left-0 -z-10 h-screen w-full object-cover opacity-100" src="/Gallery/bg-buildings.png" alt="background.img" />
+      <img className="absolute top-0 left-0 -z-10 h-screen w-full object-cover opacity-100" src="/Gallery/bg-cityskyline.png" alt="background.img" />
       {/* </div> */}
       {/* </div> */}
     
@@ -78,19 +78,17 @@ export default function Home() {
       <br/>
       <br/>
       <DefaultGallery />
-      <PartnerBrands/>
+
+      <Fortemseal/>
 
       <section id="products" className="relative mx-auto mt-24 w-full max-w-6xl px-6">
-
-
         {/* <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white/80 px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.2)] backdrop-blur-xl sm:px-12"> */}
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <span className="text-4xl font-bold uppercase text-yellow-500">
               OUR PRODUCT
             </span>
             <p className="mt-4 text-sm text-gray-600 md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit dolorum amet dolores
-            praesentium, alias nam? Tempore
+            Our products are sourced from reputable and trusted manufacturers and tested for strength, consistency, and compliance. This ensures you get dependable materials that perform where it matters most.
             </p>
           </div>
 

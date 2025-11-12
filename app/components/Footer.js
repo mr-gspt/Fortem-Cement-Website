@@ -143,13 +143,14 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-gray-200 bg-gray-100">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-5 text-gray-500 sm:px-6 md:flex-row md:items-center md:justify-between md:px-8">
-          <p className="text-center text-sm text-gray-500 md:text-left">
-            <span className="text-[#eaaa00]">&copy; {currentYear}</span> Fortem Cement Corporation. All rights reserved.
-          </p>
+        <div className="border-t border-gray-200 bg-gray-100">
+          <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-3 px-5 py-5 text-gray-500 sm:px-6 md:flex-row md:justify-center md:px-8">
+            <p className="text-center text-sm text-gray-500">
+              <span className="text-[#eaaa00]">&copy; {currentYear}</span> Fortem Cement Corporation. All rights reserved.
+            </p>
+          </div>
         </div>
-      </div>
+
       {/* dark mode removed here */}
     </footer>
   );

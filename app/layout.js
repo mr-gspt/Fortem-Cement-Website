@@ -27,7 +27,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Fortem Cement Corporation",
+  title: "FC Fortem",
   description:
     "Leading provider of construction materials and building solutions. Quality cement, plywood, and construction services.",
 };

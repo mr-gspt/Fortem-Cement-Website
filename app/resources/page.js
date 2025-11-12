@@ -147,7 +147,7 @@ const ResourcesSection = () => {
                   {filteredResources.map((resource) => (
                     <article
                       key={resource.id}
-                      className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg"
+                      className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg"
                     >
                       <div className="relative h-44 w-full overflow-hidden bg-gray-100">
                         <Image

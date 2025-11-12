@@ -143,7 +143,7 @@ export default function CareersPage() {
         <div className="mx-auto max-w-5xl px-6 py-16">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
             <div className="space-y-3">
-              <h2 className="text-2xl font-semibold">Open roles</h2>
+              <h2 className="text-2xl text-black font-semibold">Open roles</h2>
               <p className="text-sm text-slate-600">
                 Filter by department or location to find a role that fits your strengths.
               </p>

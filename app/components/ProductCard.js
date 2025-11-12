@@ -8,11 +8,11 @@ import "boxicons/css/boxicons.min.css";
 
 export function ProductCard({ image, title, description }) {
   return (
-    <Card className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-amber-400 hover:shadow-[0_25px_60px_rgba(233,155,99,0.25)]">
+    <Card className="group flex h-full w-full flex-col overflow-hidden rounded-sm border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#eaaa00] hover:shadow-[0_25px_60px_rgba(233,155,99,0.25)]">
       <CardHeader
         shadow={false}
         floated={false}
-        className="relative mx-5 mt-5 h-56 overflow-hidden rounded-2xl bg-gray-100"
+        className="relative mx-5 mt-5 h-56 overflow-hidden rounded-sm bg-gray-100"
       >
         <img
           src={image}
@@ -25,7 +25,7 @@ export function ProductCard({ image, title, description }) {
       <CardBody className="flex flex-1 flex-col gap-4 px-6 pb-6 text-center">
         <Typography
           variant="h5"
-          className="font-display text-2xl font-semibold uppercase tracking-wide text-amber-500"
+          className="font-display text-2xl font-semibold uppercase tracking-wide text-[#eaaa00]"
         >
           {title}
         </Typography>
