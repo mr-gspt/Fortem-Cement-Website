@@ -72,7 +72,7 @@ export default function Ourteam() {
             Our Team
           </h2>
           <br />
-          <ul ref={listRef} className="mt-8 space-y-8 text-lg text-gray-700 sm:text-xl">
+          <ul ref={listRef} className="mt-8 space-y-8 text-lg text-gray-700 sm:text-2xl">
             {teamHighlights.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-black" aria-hidden="true" />

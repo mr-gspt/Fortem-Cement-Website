@@ -1,169 +1,132 @@
-import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Breadcrumb from '../components/Breadcrumb'
+"use client";
+import React from "react";
+import Image from "next/image";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Breadcrumb from "../components/Breadcrumb";
 
-const page = () => {
+const logos = [
+  { src: "/Gallery/brand1.png", alt: "Brand 1", w: 570, h: 80 }, // 2× of 285×40
+  { src: "/Gallery/brand2.png", alt: "Brand 2", w: 570, h: 80 }, // 2× of 216×40
+  { src: "/Gallery/brand3.png", alt: "Brand 3", w: 570, h: 80 }, // 2× of 260×40
+  { src: "/Gallery/brand4.png", alt: "Brand 4", w: 570, h: 80 }, // 2× of 221×40
+  { src: "/Gallery/brand5.png", alt: "Brand 5", w: 570, h: 80 },
+  { src: "/Gallery/brand6.png", alt: "Brand 6", w: 570, h: 80 },
+  { src: "/Gallery/brand7.png", alt: "Brand 7", w: 570, h: 80 },
+  { src: "/Gallery/brand8.png", alt: "Brand 8", w: 570, h: 80 },
+];
+
+const plywoodbrands = [
+  { src: "/Gallery/brand1.png", alt: "Brand 1", w: 570, h: 80 }, // 2× of 285×40
+  { src: "/Gallery/brand2.png", alt: "Brand 2", w: 570, h: 80 }, // 2× of 216×40
+  { src: "/Gallery/brand3.png", alt: "Brand 3", w: 570, h: 80 }, // 2× of 260×40
+  { src: "/Gallery/brand4.png", alt: "Brand 4", w: 570, h: 80 }, // 2× of 221×40
+];
+
+const admixbrands = [
+  { src: "/Gallery/brand1.png", alt: "Brand 1", w: 570, h: 80 }, // 2× of 285×40
+  { src: "/Gallery/brand2.png", alt: "Brand 2", w: 570, h: 80 }, // 2× of 216×40
+  { src: "/Gallery/brand3.png", alt: "Brand 3", w: 570, h: 80 }, // 2× of 260×40
+  { src: "/Gallery/brand4.png", alt: "Brand 4", w: 570, h: 80 }, // 2× of 221×40
+];
+
+export default function Page() {
   return (
-    <main className='bg-white'>
-        <Header/>
-        <div className="mx-auto flex w-full max-w-[90rem] px-6 pt-6">
-          <Breadcrumb
-            items={[
-              { href: "/brands", label: "Brands" },
-            ]}
-          />
-        </div>
-    <section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap w-full mb-20 justify-center items-center">
-      <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-        <h1 className="text-center text-xl font-bold text-yellow-500 sm:text-5xl">OUR CEMENT BRANDS</h1>
-        <div className="h-1 w-120 bg-yellow-500 rounded mx-auto mt-2"></div>
-      </div>
-    </div>
-    <div className="flex flex-wrap -m-4">
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand1.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand2.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand3.png" alt="content"/>
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand4.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand5.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand6.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand7.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Gallery/brand8.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <main className="bg-white">
+      <Header />
 
-<section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap w-full mb-20 justify-center items-center">
-      <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-      <h1 className="text-center text-xl font-bold text-yellow-500 sm:text-5xl">OUR PLAYWOOD BRANDS</h1>
-      <div className="h-1 w-120 bg-yellow-500 rounded mx-auto mt-2"></div>
+      <div className="mx-auto flex w-full max-w-[90rem] px-6 pt-6">
+        <Breadcrumb items={[{ href: "/brands", label: "Brands" }]} />
       </div>
-    </div>
-    <div className="flex flex-wrap -m-4 justify-center gap-12">
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Plywood/FEDERAL PLY.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Plywood/Stallion ply.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-60 rounded w-full object-cover object-center mb-6" src="/Plywood/TITAN PLY.png" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap w-full mb-20 justify-center items-center">
-      <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-      <h1 className="text-center text-xl font-bold text-yellow-500 sm:text-5xl">OUR ADMIX BRANDS</h1>
-      <div className="h-1 w-120 bg-yellow-500 rounded mx-auto mt-2"></div>
-      </div>
-    </div>
-    <div className="flex flex-wrap -m-4 justify-center gap-12">
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-40 rounded w-full object-cover object-center mb-6" src="/user-2.gif" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-4xl font-bold text-[#eaaa00] sm:text-5xl">
+            OUR CEMENT BRANDS
+          </h2>
         </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-40 rounded w-full object-cover object-center mb-6" src="/user-2.gif" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
+
+        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {logos.map((l) => (
+            <div
+              key={l.src}
+              className="grid place-content-center p-4 grayscale transition-[filter] hover:grayscale-0"
+            >
+              <Image
+                src={l.src}
+                alt={l.alt}
+                width={l.w}
+                height={l.h}
+                // pick ONE of these size controls:
+                // className="h-14 md:h-16 w-auto"        // option A: control by height
+                className="w-100 md:w-80 h-auto"     // option B: control by width
+                // className="max-h-16 w-auto"         // option C: cap height
+                priority
+              />
+            </div>
+          ))}
         </div>
-      </div>
-      <div className="xl:w-1/4 md:w-1/2 p-4">
-        <div className="bg-white p-6 rounded-lg">
-          <img className="h-40 rounded w-full object-cover object-center mb-6" src="/user-2.gif" alt="content"/>
-          {/* <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-          <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p> */}
+      </section>
+      <hr className="my-4 border-t-10 border-gray-300"/>
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-4xl font-bold text-[#eaaa00] sm:text-5xl">
+            OUR PLYWOOD BRANDS
+          </h2>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<Footer/>
+
+        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {plywoodbrands.map((l) => (
+            <div
+              key={l.src}
+              className="grid place-content-center p-4 grayscale transition-[filter] hover:grayscale-0"
+            >
+              <Image
+                src={l.src}
+                alt={l.alt}
+                width={l.w}
+                height={l.h}
+                // pick ONE of these size controls:
+                // className="h-14 md:h-16 w-auto"        // option A: control by height
+                className="w-100 md:w-80 h-auto"     // option B: control by width
+                // className="max-h-16 w-auto"         // option C: cap height
+                priority
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+      <hr className="my-4 border-t-10 border-gray-300"/>
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-lg text-center">
+          <h2 className="text-xl font-bold text-[#eaaa00] sm:text-5xl">
+            OUR ADMIX BRANDS
+          </h2>
+        </div>
+
+        <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {admixbrands.map((l) => (
+            <div
+              key={l.src}
+              className="grid place-content-center p-4 grayscale transition-[filter] hover:grayscale-0"
+            >
+              <Image
+                src={l.src}
+                alt={l.alt}
+                width={l.w}
+                height={l.h}
+                // pick ONE of these size controls:
+                // className="h-14 md:h-16 w-auto"        // option A: control by height
+                className="w-100 md:w-80 h-auto"     // option B: control by width
+                // className="max-h-16 w-auto"         // option C: cap height
+                priority
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
     </main>
-  )
+  );
 }
-
-export default page
