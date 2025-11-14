@@ -2,12 +2,12 @@ import React from 'react'
 
 const Certification = () => {
   return (
-    <section>
+    <section className="bg-[#727171] py-16">
     <div className="container px-6 py-10 mx-auto">
         <div className="text-center">
             <h1 className="text-4xl font-bold uppercase tracking-[0.4em] text-[#eaaa00]">Certification</h1>
 
-            <p className="max-w-4xl mx-auto mt-4 text-gray-600">
+            <p className="text-xl max-w-3xl mx-auto mt-4 text-white">
             Our commitment to quality is built on trust, compliance, and performance. The certifications validate our continuous pursuit of excellence from sourcing to testing to delivery and service. Each certification is a mark of our promise to uphold the Fortem seal of quality in evert product we offer.
             </p>
         </div>
@@ -23,9 +23,9 @@ const Certification = () => {
                     DPWDH
                 </h1>
 
-                <hr className="w-32 my-6 text-gray-500"/>
+                <hr className="w-32 my-6 text-white"/>
 
-                <p className="text-md text-gray-600">
+                <p className="text-lg text-white">
                 Ensures cement meets essential quality standards for construction in the Philippines.
                 </p>
             </div>
@@ -39,9 +39,9 @@ const Certification = () => {
                 DTI Bureau of Philippine Standard
                 </h1>
 
-                <hr className="w-32 my-6 text-gray-500"/>
+                <hr className="w-32 my-6 text-white"/>
 
-                <p className="text-md text-gray-600">
+                <p className="text-lg text-white">
                 Ensures products meet the Philippine National Standards (PNS) for safety and quality.
                 </p>
             </div>
@@ -55,9 +55,9 @@ const Certification = () => {
                      MSDS
                 </h1>
 
-                <hr className="w-32 my-6 text-gray-500"/>
+                <hr className="w-32 my-6 text-white"/>
 
-                <p className="text-md text-gray-600">
+                <p className="text-lg text-white">
                 Ensures compliance with safety and regulatory standards.
                 </p>
             </div>

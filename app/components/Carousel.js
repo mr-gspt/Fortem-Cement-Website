@@ -105,7 +105,7 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
               style={{ flex: `0 0 ${100 / visibleSlides}%`, maxWidth: `${100 / visibleSlides}%` }}
             >
               <div className="flex h-full flex-col overflow-hidden rounded-lg shadow-md">
-                <div className="flex h-48 items-center justify-center bg-gray-200 md:h-64">
+                <div className="flex h-50 items-center justify-center bg-gray-200 md:h-85">
                   <img
                     src={slide.image}
                     alt={slide.title}

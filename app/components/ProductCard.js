@@ -31,7 +31,7 @@ export function ProductCard({ image, title, description }) {
         </Typography>
         <Typography
           variant="small"
-          className="text-sm leading-relaxed text-gray-600"
+          className="text-lg leading-relaxed text-gray-600"
         >
           {description}
         </Typography>

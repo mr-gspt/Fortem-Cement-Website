@@ -84,10 +84,10 @@ export default function Home() {
       <section id="products" className="relative mx-auto mt-24 w-full max-w-6xl px-6">
         {/* <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white/80 px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.2)] backdrop-blur-xl sm:px-12"> */}
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-4xl font-bold uppercase text-yellow-500">
+            <span className="text-4xl font-bold uppercase text-[#eaaa00]">
               OUR PRODUCT
             </span>
-            <p className="mt-4 text-sm text-gray-600 md:text-base">
+            <p className="mt-4 text-base text-gray-600 md:text-xl">
             Our products are sourced from reputable and trusted manufacturers and tested for strength, consistency, and compliance. This ensures you get dependable materials that perform where it matters most.
             </p>
           </div>
@@ -120,13 +120,6 @@ export default function Home() {
           <h2 className="mt-4 text-3xl font-semibold tracking-wide text-gray-800 md:text-4xl">
             Our Project
           </h2>
-          <p className="mt-4 text-sm text-gray-600 md:text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit dolorum amet dolores
-          praesentium, alias nam? Tempore
-          </p>
-        </div>
-
-        <div className="mt-12">
           <Carousel slides={projectSlides} />
         </div>
       </section>

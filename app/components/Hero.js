@@ -31,8 +31,8 @@ const Hero = () => {
             <Image
               src="/FORTEM NO LOGO.png"
               alt="Fortem Cement Corporation"
-              width={1500}
-              height={1200}
+              width={850}
+              height={700}
               priority
               className="w-full max-w-full h-auto object-contain sm:max-w-[45rem]"
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 520px"
@@ -41,7 +41,7 @@ const Hero = () => {
             data-aos="fade-right"
             data-aos-offset="100"
             data-aos-easing="ease-in-sine"
-            className="w-full text-center ml-7 sm:text-left text-base sm:text-xl tracking-wider text-white filter drop-shadow-2xl"
+            className="w-full text-center sm:text-left text-sm sm:text-base lg:text-xl leading-relaxed tracking-wide text-white drop-shadow-2xl px-4 sm:px-0 sm:ml-7"
           >
             A company dedicated to fortifying the cities of tomorrow.
           </p>
