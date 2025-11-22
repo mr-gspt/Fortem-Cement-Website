@@ -40,7 +40,7 @@ export function DefaultGallery() {
                 width={480}
                 height={288}
                 loading="lazy"
-                className="h-70 w-full bg-white object-contain"
+                className="h-60 w-full bg-white object-contain"
               />
             </div>
           ))}

@@ -10,6 +10,7 @@ import Footer from "./components/Footer.js";
 import Certification from "./components/Certification.js";
 import Carousel from "./components/Carousel.js";
 import Fortemseal from "./components/Fortemseal.js";
+import NationwideReach from "./components/NationwideReach.js";
 
 
 export default function Home() {
@@ -38,13 +39,13 @@ export default function Home() {
     { src: "/Carousel/1.png", title: "Sail Residence" },
     { src: "/Carousel/2.png", title: "SM Tuguegarao" },
     { src: "/Carousel/3.png", title: "Studio 7" },
-    { src: "/Carousel/4.png", title: "Sultan Kudarat Masjid Alkudra" },
-    { src: "/Carousel/5.png", title: "RCS Supermarket Pangasinan" },
-    { src: "/Carousel/6.png", title: "RCS Supermarket Pangasinan" },
+    { src: "/Carousel/4.png", title: "Sultan Kudarat\nMasjid Alkudra" },
+    { src: "/Carousel/5.png", title: "RCS Supermarket \nPangasinan" },
+    { src: "/Carousel/6.png", title: "RCS Supermarket \nPangasinan" },
     { src: "/Carousel/7.png", title: "Pagibig Housing Davao" },
     { src: "/Carousel/8.png", title: "SM Roxas City" },
-    { src: "/Carousel/9.png", title: "DPWDH Project Ungka Pavia Flyover" },
-    { src: "/Carousel/10.png", title: "DPWH Project Kalibo Bridge III" },
+    { src: "/Carousel/9.png", title: "DPWDH Project Ungka\n Pavia Flyover" },
+    { src: "/Carousel/10.png", title: "DPWH Project Kalibo\n Bridge III" },
     { src: "/Carousel/11.png", title: "Abreeza Condominium" },
     { src: "/Carousel/12.png", title: "L08 Tuguegarao Residential Building Phase 1,2,3 & 4" },
   ];
@@ -53,7 +54,6 @@ export default function Home() {
     id: index + 1,
     image: project.src,
     title: project.title,
-    description: project.description,
   }));
 
   useEffect(() => {
@@ -68,7 +68,9 @@ export default function Home() {
       {/* Background Image*/}
       {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-gradient-to-r from-gray-800 via-gray-800 to-gray-200 "> */}
       {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-yellow-500/15"> */}
-      <img className="absolute top-0 left-0 -z-10 h-screen w-full object-cover opacity-100" src="/Gallery/bg-cityskyline.png" alt="background.img" />
+      <img className="absolute inset-0 -z-10 h-screen w-full object-cover" 
+            src="/Gallery/bg-cityskyline.png" 
+            alt="background.img" />
       {/* </div> */}
       {/* </div> */}
     
@@ -106,20 +108,16 @@ export default function Home() {
           </div>
         {/* </div> */}
       </section>
-
-      <br/>
-      <br/>
+        
+      <NationwideReach/>
 
       <Certification/>
 
-      <section className="relative mx-auto mt-24 w-full max-w-6xl px-6">
+      <section className="relative mx-auto mt-5 w-full px-6">
         <div className="text-center">
-          <span className="text-4xl font-bold uppercase text-amber-400">
-            Featured Work
+          <span className="text-4xl font-bold uppercase text-[#eaaa00]">
+            Featured Projects
           </span>
-          <h2 className="mt-4 text-3xl font-semibold tracking-wide text-gray-800 md:text-4xl">
-            Our Project
-          </h2>
           <Carousel slides={projectSlides} />
         </div>
       </section>

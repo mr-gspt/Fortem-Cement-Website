@@ -31,10 +31,6 @@ const DEFAULT_SLIDES = [
   { id: 4, image: "https://picsum.photos/id/13/800/600", title: "Nature 4", description: "Nature last" },
 ];
 
-// TODO: Adjust slide transition duration or easing if needed.
-// TODO: Replace placeholder images with actual image paths.
-// TODO: Integrate dynamic slide data via props or API if desired.
-
 export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4500 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleSlides, setVisibleSlides] = useState(1);
@@ -45,7 +41,6 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
     setSlidesData(slides);
   }, [slides]);
 
-  // Match responsive behaviour from the Alpine.js version.
   useEffect(() => {
     const updateVisibleSlides = () => {
       const isMobile = window.innerWidth < 768;
@@ -92,7 +87,7 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
   };
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-12">
+    <div className="mx-auto w-full max-w-[85rem] px-4 py-12">
       <div className="relative overflow-hidden rounded-lg bg-white shadow-xl">
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -104,8 +99,8 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
               className="flex-shrink-0 px-2 py-4"
               style={{ flex: `0 0 ${100 / visibleSlides}%`, maxWidth: `${100 / visibleSlides}%` }}
             >
-              <div className="flex h-full flex-col overflow-hidden rounded-lg shadow-md">
-                <div className="flex h-50 items-center justify-center bg-gray-200 md:h-85">
+              <div className="flex h-full flex-col overflow-hidden rounded-[3px] border border-[#e2d9c3] bg-[#fefaf1] shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
+                <div className="relative h-80 overflow-hidden bg-white md:h-100">
                   <img
                     src={slide.image}
                     alt={slide.title}
@@ -114,9 +109,12 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
                     loading={index <= visibleSlides ? "eager" : "lazy"}
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold">{slide.title}</h3>
-                  {slide.description && <p className="mt-2 text-gray-600">{slide.description}</p>}
+
+                <div className="flex flex-1 flex-col items-center justify-center gap-3 bg-[#eaaa00] px-7 py-2 text-center min-h-[50px]">
+                  <h3 className="text-xl font-semibold leading-tight text-white whitespace-pre-line">{slide.title}</h3>
+                  {slide.description && (
+                    <p className="text-sm leading-relaxed text-[#5c5143]">{slide.description}</p>
+                  )}
                 </div>
               </div>
             </div>

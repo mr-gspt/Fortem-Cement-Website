@@ -64,16 +64,16 @@ const ResourcesSection = () => {
         <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-10">
           {/* Page Header */}
           <div className="text-center">
-            <h1 className="font-display text-3xl font-semibold uppercase tracking-tight text-yellow-600 md:text-4xl">
+            <h1 className="font-display text-3xl font-semibold uppercase tracking-tight text-[#eaaa00] md:text-4xl">
               Resources
             </h1>
-            <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-500">
+            <p className="mx-auto mt-10 max-w-2xl text-sm text-gray-500">
               Find guides, updates, and media that help you plan and deliver
               every Fortem project with confidence.
             </p>
           </div>
 
-          <div className="mt-12 flex flex-col gap-12 lg:flex-row">
+          <div className="mt-2 flex flex-col gap-12 lg:flex-row">
             {/* Sidebar */}
             <aside className="w-full max-h-80 rounded-2xl border border-gray-200 bg-gray-50 p-6 shadow-sm lg:max-w-xs">
               <h2 className="font-semibold uppercase tracking-wide text-gray-700">
@@ -212,7 +212,7 @@ const ResourcesSection = () => {
 };
 
 const ResourcesPage = () => (
-  <main className="bg-gray-50">
+  <main>
     <ResourcesSection />
   </main>
 );

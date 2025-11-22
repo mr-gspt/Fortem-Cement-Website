@@ -13,7 +13,7 @@ import OurTeam from "../components/OurTeam.js";
 export default function AboutPage() {
   useEffect(() => {
     // Set page title
-    document.title = "About Us - Fortem Cement Corporation";
+    document.title = "About Us - FC Fortem";
     
     AOS.init({
       duration: 1500,
@@ -50,7 +50,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="relative min-h-screen  bg-white">
+    <main className="relative min-h-screen">
       
       <Header />
       <div className="mx-auto flex w-full max-w-[90rem] px-6 pt-6">

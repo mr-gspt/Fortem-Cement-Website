@@ -6,29 +6,20 @@ import { useEffect, useRef, useState } from "react";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/brands", label: "Brands" },
-  { href: "/products", label: "Products" },
+  // { href: "/brands", label: "Brands" },
+  // { href: "/products", label: "Products" },
   { href: "/resources", label: "Resources" },
   { href: "/careers", label: "Careers" },
+  { href: "/about/#contact", label: "Contact" },
 ];
-
-const TOP_REVEAL_THRESHOLD = 48; // Move the mouse within this many pixels from the top to show the navbar again.
 
 const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isNavHidden, setIsNavHidden] = useState(false);
-  const lastScrollY = useRef(0);
   const scrollFrame = useRef(null);
 
   const toggleMobileMenu = () => {
-    setIsMobileOpen((prev) => {
-      const next = !prev;
-      if (!prev && isNavHidden) {
-        setIsNavHidden(false);
-      }
-      return next;
-    });
+    setIsMobileOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -49,26 +40,12 @@ const Header = () => {
       }
 
       scrollFrame.current = window.requestAnimationFrame(() => {
-        const currentY = window.scrollY;
-        const pastThreshold = currentY > 24;
-        const scrolledDown = currentY > lastScrollY.current && currentY > 120;
-        const scrolledUp = currentY < lastScrollY.current - 4;
+        const pastThreshold = window.scrollY > 24;
 
         setIsScrolled((prev) =>
           prev === pastThreshold ? prev : pastThreshold
         );
 
-        setIsNavHidden((prev) => {
-          if (scrolledDown && !prev) {
-            return true;
-          }
-          if ((scrolledUp || currentY <= 80) && prev) {
-            return false;
-          }
-          return prev;
-        });
-
-        lastScrollY.current = currentY;
         scrollFrame.current = null;
       });
     };
@@ -77,62 +54,53 @@ const Header = () => {
     return () => {
       if (scrollFrame.current !== null) {
         cancelAnimationFrame(scrollFrame.current);
+        scrollFrame.current = null;
       }
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      if (isNavHidden && event.clientY <= TOP_REVEAL_THRESHOLD) {
-        setIsNavHidden(false);
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [isNavHidden]);
-
   return (
     <header
-      className={`sticky top-0 z-50 flex w-full items-center justify-between border-b border-black-200 px-4 py-1 text-gray-900 transition-all duration-300 md:px-10 lg:px-20 ${
-        isScrolled ? "bg-black/90 shadow-md backdrop-blur" : "bg-black/90 backdrop-blur-sm"
-      } ${isNavHidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}
+      className={`sticky top-0 z-50 flex w-full items-center justify-between border-b border-black-200 px-4 py-0 text-[#eaaa00] transition-all duration-300 md:px-10 lg:px-20 ${
+        isScrolled
+          ? "bg-[#eaaa00]/90 shadow-md backdrop-blur"
+          : "bg-[#eaaa00]/90 backdrop-blur-sm"
+      } translate-y-0 opacity-100`}
     >
-
       <Link href="/">
         <img
           className="m-1 h-15 w-15 shrink-0 cursor-pointer"
           src="/Gallery/logo.png"
           alt="fc logo"
+          style={{ filter: "brightness(0) saturate(100%) invert(1)" }}
         />
       </Link>
 
-      {/* Deskstop Navigation */}
-      <nav className="hidden items-center gap-6 lg:flex lg:gap-8">
+      {/* Desktop Navigation */}
+      <nav className="hidden items-center justify-center gap-6 lg:flex lg:gap-8">
         {NAV_LINKS.map(({ href, label }) => (
           <Link
             key={href}
-            className="group relative text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:text-yellow-500 lg:text-sm"
+            className="group relative text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:text-black lg:text-base"
             href={href}
           >
             {label}
-            <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-yellow-500 transition-all duration-300 group-hover:w-full" />
+            <span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full" />
           </Link>
         ))}
       </nav>
-
+{/* 
       <div className="hidden items-center gap-4 lg:flex">
-        {/* dark mode removed here */}
         <Link
-          className="rounded-full bg-yellow-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-amber-400"
+          className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-[#eaaa00] transition-all duration-300 hover:bg-gray-200"
           href="/about/#contact"
         >
           Contact
         </Link>
-      </div>
-      
-{/* Mobile Menu - Hidden by default */}
+      </div> */}
+
+      {/* Mobile Menu Toggle */}
       <button
         onClick={toggleMobileMenu}
         aria-label="Toggle navigation"
@@ -142,10 +110,10 @@ const Header = () => {
         <i className="bx bx-menu-alt-right text-white"></i>
       </button>
 
-      {/* Mobile Menu - Hidden by default */}
+      {/* Mobile Menu */}
       <div
         id="mobileMenu"
-        className={`absolute left-0 right-0 top-full z-40 origin-top rounded-b-3xl bg-white/95 px-6 pb-8 pt-6 shadow-lg transition-all duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-x-0 top-[4.5rem] z-40 max-h-[calc(100vh-4.5rem)] overflow-y-auto rounded-b-3xl bg-white/95 px-6 pb-8 pt-6 shadow-lg transition-all duration-300 ease-in-out lg:hidden ${
           isMobileOpen
             ? "pointer-events-auto opacity-100 translate-y-0 visible"
             : "pointer-events-none opacity-0 -translate-y-4 invisible"
@@ -166,8 +134,8 @@ const Header = () => {
         </nav>
 
         <Link
-          className="mt-10 block rounded-full bg-[#eaaa00]  px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-gray-900 transition-all duration-300 hover:bg-amber-300"
-          href="/#contact"
+          className="mt-10 block rounded-full bg-[#eaaa00] px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-gray-900 transition-all duration-300 hover:bg-amber-300"
+          href="/about/#contact"
           onClick={() => setIsMobileOpen(false)}
         >
           Contact

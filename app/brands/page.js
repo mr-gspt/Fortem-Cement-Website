@@ -32,7 +32,7 @@ const admixbrands = [
 
 export default function Page() {
   return (
-    <main className="bg-white">
+    <main>
       <Header />
 
       <div className="mx-auto flex w-full max-w-[90rem] px-6 pt-6">
