@@ -4,9 +4,13 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <main id="home" className="flex flex-col items-start justify-center min-h-[calc(90vh-6rem)] px-0">
+    <main id="home" className="relative isolate flex min-h-[calc(95vh)] w-full flex-col items-start justify-center overflow-hidden">
       {/* Overlay for better text visibility /}
       {/ Introducing Button */}
+      <img className="absolute inset-0 -z-10 h-screen w-full object-cover" 
+            src="/Gallery/bg-buildings.png" 
+            alt="background.img" />
+      
   
       <div
         data-aos="fade-right"

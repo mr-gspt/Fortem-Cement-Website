@@ -3,11 +3,10 @@ const withMT = require("@material-tailwind/react/utils/withMT");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withMT({
-  // dark mode removed here
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",       // for Next.js App Router
-    "./pages/**/*.{js,ts,jsx,tsx}",     // in case you still use Pages Router
-    "./components/**/*.{js,ts,jsx,tsx}" // your components folder
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -19,8 +18,10 @@ module.exports = withMT({
         },
       },
       fontFamily: {
-        display: ["Oswald", "sans-serif"],
-        body: ["Open Sans", "sans-serif"],
+        sans: ["var(--font-poppins)", "sans-serif"],
+        display: ["var(--font-oswald)", "sans-serif"],
+        body: ["var(--font-open-sans)", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
       },
     },
   },

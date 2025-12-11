@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    font-family: var(--font-poppins), sans-serif;
+  }
+  
 
-  body{
+  body {
     @apply relative min-h-screen bg-black opacity-100 font-sans text-white overflow-x-hidden;
   }
-  body::before{
-    content:"";
+
+  body::before {
+    content: "";
     position: fixed;
     inset: 0;
     background-image: url("/Gallery/building4.png");
@@ -16,28 +21,49 @@
     opacity: 0.25;
     z-index: -1;
   }
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-  
-.font-helvetica-world {
-  font-family: var(--font-helvetica-world), "Helvetica Neue", Arial, sans-serif;
-}
-.clip-diagonal-right {
-  clip-path: polygon(0 0,100% 0,90% 100%, 0 100%);
-}
 
-.clip-diagonal-right2 {
-  clip-path: polygon(0 0,95% 0,90% 100%, 0 100%);
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;    
+  }
+
+.font-titan-one{
+  font-family: var(--font-titan-one), "Titan", Arial, sans-serif;
 }
 
 
-@media (min-width: 768px){
-  .clip-diagonal-right-md {
-    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%)
+.font-terminal-dosis{
+  font-family: var(--font-terminal-dosis), "Terminal", Arial, sans-serif;
+}
+
+
+.font-poetsen-one {
+  font-family: var(--font-poetsen-one), "Poetsen", Arial, sans-serif;
+}
+
+  .font-helvetica-world {
+    font-family: var(--font-helvetica-world), "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .clip-diagonal-right {
+    clip-path: polygon(0 0,100% 0,90% 100%, 0 100%);
+  }
+
+  .clip-diagonal-right2 {
+    clip-path: polygon(0 0,95% 0,90% 100%, 0 100%);
+  }
+
+  @media (min-width: 768px) {
+    .clip-diagonal-right-md {
+      clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    }
   }
 }
 
-
+@layer utilities {
+  .text-outline-fortem {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #eaaa00; 
+    color: transparent; /* makes it hollow */
+  }
 }

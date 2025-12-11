@@ -17,13 +17,15 @@ export function DefaultGallery() {
     ];
   
     return (
-        <section id="ourbrand" data-aos="fade-down" className="w-full py-12">
-      <div className="mx-auto max-w-5xl px-6">
+        <section id="ourbrand" data-aos="fade-down" className="w-full mb-12">
+      <div className="mx-auto max-w-6xl px-6">
       <div className="text-center">
-        <div className="relative mt-6 inline-block px-3 sm:px-5">
-          <span className="absolute -inset-x-8 bottom-0 top-1/2 -z-10 rounded-full blur-3xl" aria-hidden="true" />
-          <h2 className="text-4xl font-bold uppercase text-[#eaaa00] drop-shadow-sm sm:text-5xl lg:text-6xl">
-            Our Brands
+        <div className="relative inline-block px-3 sm:px-5">
+        {/* <h2 className="text-7xl font-extrabold uppercase text-outline-fortem drop-shadow-sm sm:text-7xl lg:text-8xl">
+            Our
+          </h2> */}
+          <h2 className="text-5xl font-extrabold uppercase text-[#eaaa00] drop-shadow-sm sm:text-5xl lg:text-7xl">
+          Our Brands
           </h2>
         </div>
       </div>
@@ -32,7 +34,7 @@ export function DefaultGallery() {
           {data.map(({ imageLink }, index) => (
             <div
               key={index}
-              className="w-full max-w-md overflow-hidden rounded-sm border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#eaaa00] hover:shadow-[0_25px_60px_rgba(233,155,99,0.25)]"
+              className="w-full max-w-md overflow-hidden rounded-sm border border-[#eaaa00] bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#eaaa00] hover:shadow-[0_25px_60px_rgba(233,155,99,0.25)]"
             >
               <Image
                 src={imageLink}

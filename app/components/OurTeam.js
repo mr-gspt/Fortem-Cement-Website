@@ -72,10 +72,10 @@ export default function Ourteam() {
             Our Team
           </h2>
           <br />
-          <ul ref={listRef} className="mt-8 space-y-8 text-lg text-gray-700 sm:text-2xl">
+          <ul ref={listRef} className="mt-8 space-y-8 text-lg text-[#727171] font-lightbold sm:text-2xl">
             {teamHighlights.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-black" aria-hidden="true" />
+                <span className="mt-2 h-2 w-2 rounded-full bg-[#727171]" aria-hidden="true" />
                 <span>
                   {item.labelBefore || ""}
                   {visible ? (
@@ -104,7 +104,7 @@ export default function Ourteam() {
           {teamPhotos.map((photo, index) => (
             <figure
               key={index}
-              className="overflow-hidden rounded-3xl border-4 border-yellow-400 bg-white shadow-lg"
+              className="overflow-hidden rounded border-4 border-yellow-400 bg-white shadow-lg"
             >
               <img
                 src={photo.src}

@@ -1,15 +1,10 @@
-// app/resources/admin/page.js
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import {
-  UploadCloud,
-  FileText,
-  Link2,
-  Search,
-} from "lucide-react";
+import { UploadCloud, FileText, Link2, Search } from "lucide-react";
 
 const RESOURCE_TYPES = ["Videos", "Vlogs", "News", "Media"];
+const MAX_FILE_BYTES = 500 * 1024 * 1024; // 500MB limit; adjust as needed
 
 export default function ResourcesAdminPage() {
   const [resources, setResources] = useState([]);
@@ -69,8 +64,17 @@ export default function ResourcesAdminPage() {
     setFileType(null);
   }
 
+  function rejectIfTooBig(f) {
+    if (f && f.size > MAX_FILE_BYTES) {
+      alert("File is too large (max 500MB).");
+      return true;
+    }
+    return false;
+  }
+
   function onFileChange(e) {
     const f = e.target.files?.[0] ?? null;
+    if (rejectIfTooBig(f)) return;
     setFile(f);
     if (!f) {
       setPreview(null);
@@ -85,6 +89,7 @@ export default function ResourcesAdminPage() {
 
   function onLinkFileChange(e) {
     const f = e.target.files?.[0] ?? null;
+    if (rejectIfTooBig(f)) return;
     setLinkFile(f);
     if (!f) {
       setLinkPreview(null);
@@ -96,26 +101,22 @@ export default function ResourcesAdminPage() {
   }
 
   async function uploadFile(fileObj) {
-    return await new Promise((resolve, reject) => {
-      const r = new FileReader();
-      r.onload = async () => {
-        try {
-          const base64 = r.result;
-          const resp = await fetch("/api/upload", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ filename: fileObj.name, fileData: base64 }),
-          });
-          const json = await resp.json();
-          if (!resp.ok) throw new Error(json?.error || "Upload failed");
-          resolve(json.url);
-        } catch (err) {
-          reject(err);
-        }
-      };
-      r.onerror = () => reject(new Error("File read error"));
-      r.readAsDataURL(fileObj);
+    if (!fileObj) throw new Error("No file selected");
+    if (fileObj.size > MAX_FILE_BYTES) {
+      throw new Error("File is too large (max 500MB).");
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileObj);
+
+    const resp = await fetch("/api/upload", {
+      method: "POST",
+      body: formData,
     });
+
+    const json = await resp.json();
+    if (!resp.ok) throw new Error(json?.error || "Upload failed");
+    return json.url;
   }
 
   async function handleSubmit(e) {
@@ -245,7 +246,7 @@ export default function ResourcesAdminPage() {
               />
               <label className="mt-3 flex items-center justify-center gap-2 cursor-pointer rounded-lg border border-dashed border-gray-300 py-3 text-sm font-medium text-yellow-700 hover:bg-yellow-50 transition">
                 <Link2 className="h-5 w-5" />
-                Upload file for link
+                Upload file local file
                 <input
                   type="file"
                   accept=".pdf,video/*,image/*,.doc,.docx"
@@ -265,11 +266,11 @@ export default function ResourcesAdminPage() {
             {/* === Thumbnail Upload === */}
             <div className="flex flex-col">
               <span className="text-sm font-medium text-gray-700 mb-1">
-                Thumbnail / Image / Video
+                Thumbnail
               </span>
               <label className="flex items-center justify-center gap-2 cursor-pointer rounded-lg border border-dashed border-gray-300 py-3 text-sm font-medium text-yellow-700 hover:bg-yellow-50 transition">
                 <UploadCloud className="h-5 w-5" />
-                Choose file
+                Choose Image
                 <input
                   type="file"
                   accept="image/*,.pdf,video/*"
@@ -284,12 +285,12 @@ export default function ResourcesAdminPage() {
                     <img
                       src={preview}
                       alt="preview"
-                      className="h-28 w-auto rounded border object-cover"
+                      className="h-28 w-auto rounded border object-contain bg-white p-1"
                     />
                   ) : fileType?.startsWith("video/") ? (
                     <video
                       src={preview}
-                      className="h-28 rounded border"
+                      className="h-28 rounded border bg-black"
                       controls
                       muted
                     />
@@ -309,14 +310,15 @@ export default function ResourcesAdminPage() {
             <button
               disabled={loading}
               type="submit"
-              className="rounded-lg bg-yellow-600 px-5 py-2 text-sm font-semibold text-white hover:bg-yellow-700"
+              
+              className="rounded-lg bg-yellow-600 px-5 py-2 text-sm font-semibold text-white hover:bg-yellow-700 disabled:opacity-70 cursor-pointer disabled:cursor-not-allowed"
             >
               {editingId ? "Update Resource" : "Add Resource"}
             </button>
             <button
               type="button"
               onClick={resetForm}
-              className="rounded-lg border border-gray-300 px-4 py-2 text-sm hover:bg-gray-100"
+              className="rounded-lg border border-gray-300 px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer disabled:cursor-not-allowed"
             >
               Reset
             </button>
@@ -327,7 +329,7 @@ export default function ResourcesAdminPage() {
                   setEditingId(null);
                   resetForm();
                 }}
-                className="text-sm text-gray-600 underline"
+                className="text-sm text-gray-600 underline cursor-pointer disabled:cursor-not-allowed"
               >
                 Cancel Edit
               </button>
@@ -365,7 +367,7 @@ export default function ResourcesAdminPage() {
                   <img
                     src={r.image || "/default-thumbnail.jpg"}
                     alt={r.title}
-                    className="h-20 w-28 rounded object-cover"
+                    className="h-20 w-28 rounded border object-contain bg-white p-1"
                   />
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -376,20 +378,22 @@ export default function ResourcesAdminPage() {
                         <div className="text-sm text-gray-500">
                           {r.type} •{" "}
                           {r.created_at
-                            ? new Date(r.created_at).toLocaleString("en-PH", { timeZone: "Asia/Manila" })
+                            ? new Date(r.created_at).toLocaleString("en-PH", {
+                                timeZone: "Asia/Manila",
+                              })
                             : ""}
                         </div>
                       </div>
                       <div className="flex gap-2">
                         <button
                           onClick={() => startEdit(r)}
-                          className="rounded border border-gray-300 px-3 py-1 text-sm hover:bg-gray-100"
+                          className="rounded border border-gray-300 px-3 py-1 text-sm hover:bg-gray-100 cursor-pointer disabled:cursor-not-allowed"
                         >
                           Edit
                         </button>
                         <button
                           onClick={() => handleDelete(r.id)}
-                          className="rounded bg-red-500 px-3 py-1 text-sm text-white hover:bg-red-600"
+                          className="rounded bg-red-500 px-3 py-1 text-sm text-white hover:bg-red-600 cursor-pointer disabled:cursor-not-allowed"
                         >
                           Delete
                         </button>

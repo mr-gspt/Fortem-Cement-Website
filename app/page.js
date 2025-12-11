@@ -68,9 +68,9 @@ export default function Home() {
       {/* Background Image*/}
       {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-gradient-to-r from-gray-800 via-gray-800 to-gray-200 "> */}
       {/* <div className="absolute top-0 left-0 -z-10 h-screen w-full bg-yellow-500/15"> */}
-      <img className="absolute inset-0 -z-10 h-screen w-full object-cover" 
+      {/* <img className="absolute inset-0 -z-10 h-screen w-full object-cover" 
             src="/Gallery/bg-cityskyline.png" 
-            alt="background.img" />
+            alt="background.img" /> */}
       {/* </div> */}
       {/* </div> */}
     
@@ -83,19 +83,19 @@ export default function Home() {
 
       <Fortemseal/>
 
-      <section id="products" className="relative mx-auto mt-24 w-full max-w-6xl px-6">
+      <section id="products" className="relative mx-auto mt-24 w-full max-w-7xl px-6">
         {/* <div className="relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white/80 px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.2)] backdrop-blur-xl sm:px-12"> */}
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="text-4xl font-bold uppercase text-[#eaaa00]">
+          <div className="mx-auto max-w-7xl text-center">
+            <h2 className="text-5xl sm:text-5xl md:text-7xl font-bold uppercase text-[#eaaa00]">
               OUR PRODUCT
-            </span>
+            </h2>
             <p className="mt-4 text-base text-gray-600 md:text-xl">
             Our products are sourced from reputable and trusted manufacturers and tested for strength, consistency, and compliance. This ensures you get dependable materials that perform where it matters most.
             </p>
           </div>
-
+          
           {/* Center product cards */}
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 mb-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product, index) => (
               <div key={index} className="w-full">
                 <ProductCard
@@ -115,9 +115,9 @@ export default function Home() {
 
       <section className="relative mx-auto mt-5 w-full px-6">
         <div className="text-center">
-          <span className="text-4xl font-bold uppercase text-[#eaaa00]">
+          <h2 className="text-4xl sm:text-4xl md:text-6xl font-bold uppercase text-[#eaaa00]">
             Featured Projects
-          </span>
+          </h2>
           <Carousel slides={projectSlides} />
         </div>
       </section>

@@ -1,45 +1,51 @@
-// app/api/upload/route.js
 import fs from "fs";
 import path from "path";
+import { pipeline } from "stream/promises";
+import { Readable } from "stream";
 
-export const runtime = "nodejs"; // ensure Node runtime so fs/path work
+export const runtime = "nodejs";
+
+const MAX_FILE_BYTES = 500 * 1024 * 1024; // 500MB limit; adjust as needed
 
 export async function POST(req) {
   try {
-    const { filename, fileData } = await req.json();
-    if (!filename || !fileData) {
-      return new Response(JSON.stringify({ error: "Missing filename or fileData" }), { status: 400 });
+    const formData = await req.formData();
+    const file = formData.get("file");
+
+    if (!file || typeof file === "string") {
+      return new Response(JSON.stringify({ error: "No file found" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    // fileData should be like: data:image/png;base64,iVBORw0KG...
-    const matches = fileData.match(/^data:(.+);base64,(.+)$/);
-    if (!matches) {
-      return new Response(JSON.stringify({ error: "Invalid file data" }), { status: 400 });
+    if (file.size > MAX_FILE_BYTES) {
+      return new Response(
+        JSON.stringify({ error: "File is too large. Max 500MB." }),
+        {
+          status: 413,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     }
-
-    const base64Data = matches[2];
-    const buffer = Buffer.from(base64Data, "base64");
 
     const uploadsDir = path.join(process.cwd(), "public", "uploads");
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
-    }
+    await fs.promises.mkdir(uploadsDir, { recursive: true });
 
-    // sanitize filename a bit, prefix with timestamp to avoid collisions
-    const safeName = `${Date.now()}-${filename.replace(/[^a-zA-Z0-9.\-_]/g, "_")}`;
+    const safeName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_")}`;
     const filePath = path.join(uploadsDir, safeName);
 
-    await fs.promises.writeFile(filePath, buffer);
+    await pipeline(Readable.fromWeb(file.stream()), fs.createWriteStream(filePath));
 
-    // Use the public path that your app serves files from
-    const publicUrl = `/uploads/${safeName}`;
-
-    return new Response(JSON.stringify({ url: publicUrl }), {
+    return new Response(JSON.stringify({ url: `/uploads/${safeName}` }), {
       status: 201,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
     console.error("upload error:", err);
-    return new Response(JSON.stringify({ error: err.message }), { status: 500 });
+    return new Response(JSON.stringify({ error: "Upload failed" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
