@@ -1,9 +1,9 @@
 ﻿"use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Header from "../components/Header.js";
-import Footer from "../components/Footer.js";
-import Breadcrumb from "../components/Breadcrumb.js";
+import Header from "../../components/Header.js";
+import Footer from "../../components/Footer.js";
+import Breadcrumb from "../../components/Breadcrumb.js";
 
 const SHEET_RANGE = "Sheet1!A2:E200";
 const FALLBACK_DEPARTMENTS = ["Engineering", "Operations", "People"];

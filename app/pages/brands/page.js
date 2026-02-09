@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Breadcrumb from "../components/Breadcrumb";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Breadcrumb from "../../components/Breadcrumb";
 
 const logos = [
   { src: "/Gallery/brand1.png", alt: "Brand 1", w: 570, h: 80 }, // 2× of 285×40

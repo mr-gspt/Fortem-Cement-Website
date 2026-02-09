@@ -7,39 +7,39 @@ const PRODUCT_MENU = [
   {
     title: "Cement",
     items: [
-      { label: "Conch Cement", href: "/products/Cement/conchCement" },
-      { label: "Federal Cement", href: "/products/Cement/federalCement" },
-      { label: "Hero Cement", href: "/products/Cement/heroCement" },
-      { label: "Red Lion Cement", href: "/products/Cement/redLionCement" },
-      { label: "Stallion Cement", href: "/products/Cement/stallionCement" },
-      { label: "Titan Cement", href: "/products/Cement/titanCement" },
-      { label: "Tough Cement", href: "/products/Cement/toughCement" },
-      { label: "Xuan Thanh Cement", href: "/products/Cement/xuanThanhCement" },
+      { label: "Conch Cement", href: "/pages/products/Cement/conchCement" },
+      { label: "Federal Cement", href: "/pages/products/Cement/federalCement" },
+      { label: "Hero Cement", href: "/pages/products/Cement/heroCement" },
+      { label: "Red Lion Cement", href: "/pages/products/Cement/redLionCement" },
+      { label: "Stallion Cement", href: "/pages/products/Cement/stallionCement" },
+      { label: "Titan Cement", href: "/pages/products/Cement/titanCement" },
+      { label: "Tough Cement", href: "/pages/products/Cement/toughCement" },
+      { label: "Xuan Thanh Cement", href: "/pages/products/Cement/xuanThanhCement" },
     ],
   },
   {
     title: "Playwood",
     items: [
-      { label: "FederalPly", href: "/products/Plywood/FederalPly" },
-      { label: "StallionPly", href: "/products/Plywood/StallionPly" },
-      { label: "TitanPly", href: "/products/Plywood/TitanPly" },
-      { label: "Kalsi", href: "/products/Plywood/Kalsi" },
+      { label: "FederalPly", href: "/pages/products/Plywood/FederalPly" },
+      { label: "StallionPly", href: "/pages/products/Plywood/StallionPly" },
+      { label: "TitanPly", href: "/pages/products/Plywood/TitanPly" },
+      { label: "Kalsi", href: "/pages/products/Plywood/Kalsi" },
     ],
   },
   {
     title: "Admix",
-    items: [{ label: "Vegamaterials", href: "/products/Admix/Vegamaterials" }],
+    items: [{ label: "Vegamaterials", href: "/pages/products/Admix/Vegamaterials" }],
   },
 ];
 
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/products", label: "Products" },
-  { href: "/resources", label: "Resources" },
-  { href: "/careers", label: "Careers" },
-  { href: "/about/#contact", label: "Contact" },
+  { href: "/pages/about", label: "About Us" },
+  { href: "/pages/products", label: "Products" },
+  { href: "/pages/resources", label: "Resources" },
+  { href: "/pages/careers", label: "Careers" },
+  { href: "/pages/about/#contact", label: "Contact" },
 ];
 
 const Header = () => {
@@ -177,7 +177,7 @@ const Header = () => {
                 </Link>
 
                 <div
-                  className={`absolute left-1/2 top-full mt-4 w-[1100px] max-w-[95vw] -translate-x-1/2 bg-[#eaaa00] shadow-md backdrop-blur text-white ring-1 ring-black/10 transition-all duration-200 ${
+                  className={`absolute left-1/2 top-full mt-4 w-[750px] max-w-[95vw] -translate-x-1/2 bg-[#eaaa00] shadow-md backdrop-blur text-white ring-1 ring-black/10 transition-all duration-200 ${
                     isOpen
                       ? "pointer-events-auto translate-y-0 opacity-100"
                       : "pointer-events-none -translate-y-2 opacity-0"

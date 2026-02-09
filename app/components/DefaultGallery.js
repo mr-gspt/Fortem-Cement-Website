@@ -52,4 +52,3 @@ export function DefaultGallery() {
 
     );
   }
-  // dark mode removed here

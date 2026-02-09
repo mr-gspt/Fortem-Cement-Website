@@ -1,3 +1,6 @@
+"use client"
+
+import BrandMarquee from "./BrandMarquee";
 // app/components/NationwideReach.js
 const locations = [
   // Adjust x/y (0-100) to move the pins over the map image quickly.
@@ -101,7 +104,7 @@ export default function NationwideReach() {
 
         <div className="relative space-y-10 ">
           <div>
-            <p className="text-3xl font-bold uppercase tracking-[0.20em] text-center text-[#eaaa00]">Nationwide Reach</p>
+            <p className="text-4xl font-bold uppercase text-center text-[#eaaa00]">Nationwide Reach</p>
             <p className="mt-2 text-xl font-bold uppercase text-center text-[#eaaa00]">Proven Distribution Efficiency</p>
             {/* <p className="mt-3 text-base text-slate-600">
               Purpose-built hubs positioned for fast pull-outs, steady stock turns, and reliable service for contractors and dealers.
@@ -124,8 +127,8 @@ export default function NationwideReach() {
           </div>
         </div>
           <div>
-            <p className="text-lg font-semibold text-white">Warehouse sites</p>
-            <ul className="mt-3 gap-2 text-base text-white sm:grid-cols-2">
+            <p className="text-2xl font-semibold text-white">Warehouse sites</p>
+            <ul className="mt-3 gap-2 text-xl text-white sm:grid-cols-2">
               {warehouseSites.map((city) => (
                 <li key={city} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#eaaa00]" aria-hidden />
@@ -140,6 +143,26 @@ export default function NationwideReach() {
           </p> */}
         </div>
       </div>
+      <div className="mx-auto mt-10 max-w-8xl px-5 sm:px-6 lg:px-8 border-t border-white/10 pt-8">
+      {/* <p className="mb-4 text-center text-sm font-semibold uppercase tracking-widest text-white/70">
+        Our Brands
+      </p> */}
+
+  <BrandMarquee
+    speedPxPerSec={70}
+    brands={[
+      { key: "brand1", src: "/Gallery/brand1.png", alt: "Conch Cement" },
+      { key: "brand2", src: "/Gallery/brand2.png", alt: "Vega Materials" },
+      { key: "brand3", src: "/Gallery/brand3.png", alt: "Newgate" },
+      { key: "brand4", src: "/Gallery/brand4.png", alt: "Spiceworks" },
+      { key: "brand5", src: "/Gallery/brand5.png", alt: "Brand 5" },
+      { key: "brand6", src: "/Gallery/brand6.png", alt: "Brand 6" },
+      { key: "brand7", src: "/Gallery/brand7.png", alt: "Brand 7" },
+      { key: "brand8", src: "/Gallery/brand8.png", alt: "Brand 8" },
+    ]}
+  />
+</div>
     </section>
+    
   );
 }

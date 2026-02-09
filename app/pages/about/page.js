@@ -1,13 +1,13 @@
 ﻿"use client";
-import Header from "../components/Header.js";
-import Footer from "../components/Footer.js";
+import Header from "../../components/Header.js";
+import Footer from "../../components/Footer.js";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Image from "next/image";
-import Contactsection from "../components/Contactsection.js";
-import Breadcrumb from "../components/Breadcrumb.js";
-import OurTeam from "../components/OurTeam.js";
+import Contactsection from "../../components/Contactsection.js";
+import Breadcrumb from "../../components/Breadcrumb.js";
+import OurTeam from "../../components/OurTeam.js";
 
 
 export default function AboutPage() {
@@ -61,7 +61,7 @@ export default function AboutPage() {
         />
       </div> */}
 
-        {/* HERO BANNER – similar to your inspiration */}
+        {/* HERO BANNER */}
         <section className="relative h-[40vh] w-full md:h-[50vh]">
         <Image
           src="/Gallery/bg-makaticity.png" // change to your banner image

@@ -14,7 +14,7 @@ function PreviewImage({ src, alt, width = 600, height = 800, sizes }) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="group relative block w-full h-[20rem] md:h-[33rem] overflow-hidden rounded bg-white shadow-sm cursor-pointer"
+        className="group relative block w-full overflow-hidden rounded bg-white shadow-sm cursor-pointer"
       >
         <Image
           alt={alt}
@@ -81,8 +81,8 @@ function PreviewImage({ src, alt, width = 600, height = 800, sizes }) {
 export default function Page() {
   const productEntries = [
     {
-      title: "Federalply",
-      image: "/Plywood/Plywood2.png",
+      title: "Federal Type 1",
+      image: "/Cement/federal type 1.png",
       sizes: "(max-width: 1024px) 90vw, 31rem",
       paragraphs: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -94,21 +94,21 @@ export default function Page() {
         { label: "Packaging", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
       ],
     },
-    // {
-    //   title: "Red Lion Type 1P",
-    //   image: "/Cement/red lion type 1P.png",
-    //   sizes: "(max-width: 1024px) 90vw, 50vw",
-    //   paragraphs: [
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-    //   ],
-    //   specs: [
-    //     { label: "Applications", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    //     { label: "Workability", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    //     { label: "Packaging", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-    //   ],
-    //   reverse: true,
-    // },
+    {
+      title: "Federal Type 1P",
+      image: "/Cement/federal type 1P.png",
+      sizes: "(max-width: 1024px) 90vw, 50vw",
+      paragraphs: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      ],
+      specs: [
+        { label: "Applications", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+        { label: "Workability", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+        { label: "Packaging", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+      ],
+      reverse: true,
+    },
   ];
 
   return (
@@ -118,7 +118,7 @@ export default function Page() {
         <Breadcrumb
           items={[
             { href: "/products", label: "Products" },
-            { href: "/products/Plywood/FederalPly", label: "Federalply" },
+            { href: "/federalCement", label: "Federal Cement" },
           ]}
         />
       </div>
@@ -141,7 +141,7 @@ export default function Page() {
 
             <div className="lg:w-1/2 space-y-6">
               <div className="space-y-3">
-                <h1 className="text-[#eaaa00] text-3xl sm:text-6xl lg:text-7xl font-black leading-tight">
+                <h1 className="text-[#eaaa00] text-3xl sm:text-5xl lg:text-6xl font-black leading-tight">
                   {product.title}
                 </h1>
                 <p className="text-2xl font-extrabold text-gray-900 tracking-tight">
@@ -167,10 +167,43 @@ export default function Page() {
           </div>
         ))}
 
+{/* <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-10 overflow-hidden space-y-12">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-500">Product Gallery</h2>
+        </div>
+     
+    <div className="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:pb-0 lg:grid-cols-4">
+            {[
+              "brand2.png",
+              "brand3.png",
+              "brand4.png",
+              "brand5.png",
+              "brand6.png",
+              "brand7.png",
+              "brand8.png",
+              "brand1.png",
+            ].map((logo, idx) => (
+              <div
+                key={logo}
+                className="min-w-[160px] md:min-w-0 md:w-full grid place-content-center bg-white rounded shadow-sm snap-center"
+              >
+                <Image
+                  src={`/Gallery/${logo}`}
+                  alt={`Partner brand ${idx + 1}`}
+                  width={285}
+                  height={100}
+                  className="h-50 sm:h-50 w-full object-contain p-3"
+                />
+              </div>
+            ))}
+          </div>
+      </div> */}
+
+
         {/* Partner Brand Section */}
         <div className="space-y-4">
           <div>
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold text-yellow-500">Our Partner Brands</h1>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-500">Our Partner Brands</h1>
             <p className="mt-2 max-w-xl text-sm sm:text-base text-gray-700">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
@@ -179,10 +212,14 @@ export default function Page() {
           {/* Mobile: swipeable row; Desktop: grid */}
           <div className="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:pb-0 lg:grid-cols-4">
             {[
-              "FEDERAL PLY.png",
-              "Stallion ply.png",
-              "TITAN PLY.png",
-              "Kalsi.png",
+              "brand2.png",
+              "brand3.png",
+              "brand4.png",
+              "brand5.png",
+              "brand6.png",
+              "brand7.png",
+              "brand8.png",
+              "brand1.png",
             ].map((logo, idx) => (
               <div
                 key={logo}

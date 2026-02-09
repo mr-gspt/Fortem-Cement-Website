@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useMemo, useState, useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Breadcrumb from "../components/Breadcrumb";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Breadcrumb from "../../components/Breadcrumb";
 
 const RESOURCE_TYPES = ["Videos", "Vlogs", "News", "Media"];
 const PAGE_SIZE = 3;

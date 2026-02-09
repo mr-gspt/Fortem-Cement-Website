@@ -97,7 +97,7 @@ export default function Page() {
     {
       title: "Conch Type 1P",
       image: "/Cement/conch type 1P.png",
-      sizes: "(max-width: 1024px) 90vw, 50vw",
+      sizes: "(max-width: 1024px) 90vw, 31rem",
       paragraphs: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
@@ -166,6 +166,48 @@ export default function Page() {
             </div>
           </div>
         ))}
+      
+      {/* Product Gallery Section */}
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-10 overflow-hidden space-y-12">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-500">Product Gallery</h2>
+        </div>
+     
+    <div className="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:pb-0 lg:grid-cols-4">
+            {[
+              "brand2.png",
+              "brand3.png",
+              "brand4.png",
+              "brand5.png",
+              "brand6.png",
+              "brand7.png",
+              "brand8.png",
+              "brand1.png",
+            ].map((logo, idx) => (
+              <div
+                key={logo}
+                className="min-w-[160px] md:min-w-0 md:w-full grid place-content-center bg-white rounded shadow-sm snap-center"
+              >
+                <Image
+                  src={`/Gallery/${logo}`}
+                  alt={`Partner brand ${idx + 1}`}
+                  width={285}
+                  height={100}
+                  className="h-50 sm:h-50 w-full object-contain p-3"
+                />
+              </div>
+            ))}
+          </div>
+      </div>
+
+      {/* Other Product Section */}
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-10 overflow-hidden space-y-12">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-500">Other Product</h2>
+        </div>
+
+      </div>
+      
 
         {/* Partner Brand Section */}
         <div className="space-y-4">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -43,8 +43,9 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
 
   useEffect(() => {
     const updateVisibleSlides = () => {
-      const isMobile = window.innerWidth < 768;
-      const slidesToShow = isMobile ? 1 : Math.min(3, Math.max(slidesData.length, 1));
+      const width = window.innerWidth;
+      const maxSlides = width < 640 ? 1 : width < 1024 ? 2 : 3;
+      const slidesToShow = Math.min(Math.max(slidesData.length, 1), maxSlides);
 
       setVisibleSlides(slidesToShow);
       setSlidePercentage(100 / slidesToShow);
@@ -100,7 +101,7 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
               style={{ flex: `0 0 ${100 / visibleSlides}%`, maxWidth: `${100 / visibleSlides}%` }}
             >
               <div className="flex h-full flex-col overflow-hidden rounded-[3px] border border-[#e2d9c3] bg-[#fefaf1] shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
-                <div className="relative h-80 overflow-hidden bg-white md:h-100">
+                <div className="relative h-64 overflow-hidden bg-white sm:h-72 md:h-80 lg:h-96">
                   <img
                     src={slide.image}
                     alt={slide.title}
@@ -164,3 +165,4 @@ export default function Carousel({ slides = DEFAULT_SLIDES, autoPlayInterval = 4
     </div>
   );
 }
+
