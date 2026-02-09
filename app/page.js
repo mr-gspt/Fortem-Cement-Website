@@ -122,7 +122,7 @@ export default function Home() {
       </div>
     </section>
 
-      {/* <section id="products" className="relative mx-auto mt-24 w-full max-w-7xl px-6">
+      <section id="products" className="relative mx-auto mt-24 w-full max-w-7xl px-6">
           <div className="mx-auto max-w-7xl text-center">
             <h2 className="text-5xl sm:text-5xl md:text-7xl font-bold uppercase text-[#eaaa00]">
               OUR PRODUCT
@@ -143,7 +143,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-      </section> */}
+      </section>
         
       <NationwideReach/>
 
