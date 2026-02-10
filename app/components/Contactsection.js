@@ -60,9 +60,9 @@ const Contactsection = () => {
   return (
     <section id="contact" className="relative isolate overflow-hidden py-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b via-transparent to-transparent" />
-      <div className="container mx-auto flex flex-col-reverse gap-12 px-6 sm:flex-col lg:flex-row lg:items-stretch">
+      <div className="container mx-auto flex justify-center px-6">
         {/* Map + Contact Info */}
-        <div className="relative flex w-full flex-col overflow-hidden border border-gray-200 bg-white shadow-[0_45px_120px_rgba(15,23,42,0.2)] backdrop-blur-xl lg:w-2/3">
+        {/* <div className="relative flex w-full flex-col overflow-hidden border border-gray-200 bg-white shadow-[0_45px_120px_rgba(15,23,42,0.2)] backdrop-blur-xl lg:w-2/3">
           <div className="relative aspect-[16/10] w-full overflow-hidden">
             <iframe
               width="100%"
@@ -96,10 +96,10 @@ const Contactsection = () => {
               <p className="mt-2 text-sm text-gray-600">0968 669 6948</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Feedback Form */}
-        <div className="relative w-full border border-gray-200 bg-white p-8 shadow-[0_45px_120px_rgba(15,23,42,0.2)] backdrop-blur-xl md:w-1/2 lg:w-1/3">
+        <div className="relative w-full max-w-2xl border border-gray-200 bg-white p-8 shadow-[0_45px_120px_rgba(15,23,42,0.2)] backdrop-blur-xl">
           <span className="text-xs font-semibold uppercase tracking-[0.35em] text-[#eaaa00]">Contact Us</span>
           <h2 className="mt-4 text-xl font-semibold text-gray-900">We’d love to hear from you! Send us your questions, requests, or feedback.</h2>
           {/* <p className="mt-3 text-sm leading-relaxed text-gray-600">

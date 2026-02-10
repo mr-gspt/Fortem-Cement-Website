@@ -11,7 +11,7 @@ export function DefaultGallery() {
       { imageLink: "/Gallery/brand4.png" },
       { imageLink: "/Gallery/brand5.png" },
       { imageLink: "/Gallery/brand6.png" },
-      { imageLink: "/Gallery/VegaMaterials.png" },
+      // { imageLink: "/Gallery/VegaMaterials.png" },
       { imageLink: "/Gallery/brand7.png" },
       // … keep the rest
     ];
