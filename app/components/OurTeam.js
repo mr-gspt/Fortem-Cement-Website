@@ -16,6 +16,8 @@ function useInView(ref, options = { threshold: 0.3 }) {
 
 /* ---------- count-up with optional start and noFormat ---------- */
 const numberFormatter = new Intl.NumberFormat("en-PH");
+const currentYear = new Date().getFullYear();
+
 
 function CountUp({ start = 0, end, duration = 1500, noFormat = false }) {
   const [count, setCount] = useState(start);
@@ -44,7 +46,7 @@ function CountUp({ start = 0, end, duration = 1500, noFormat = false }) {
 
 /* ---------- data ---------- */
 const teamHighlights = [
-  { labelBefore: "Established since ", value: 2016, isYear: true, startFrom: 2000, duration: 1500 },
+  { labelBefore: "Established since ", value: currentYear, isYear: true, startFrom: 2016, duration: 1500 },
   { labelBefore: "Presence in ", value: 16, labelAfter: " regions", duration: 1200 },
   { labelBefore: "Over ", value: 10, labelAfter: " distribution centers", duration: 1200 },
   { value: 200, labelAfter: " business partners", suffix: "+", duration: 1200 },
