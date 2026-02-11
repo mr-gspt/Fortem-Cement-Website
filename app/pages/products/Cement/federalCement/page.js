@@ -114,6 +114,17 @@ export default function Page() {
   return (
     <main>
       <Header />
+      <section className="relative h-[40vh] w-full md:h-[80vh]">
+        <Image
+          src="/Gallery/Draft 1.png"
+          alt="Cover"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0" />
+      </section>
+
       <div className="mx-auto flex w-full max-w-[90rem] px-4 sm:px-6 pt-6 mb-6 sm:mb-10">
         <Breadcrumb
           items={[
@@ -167,7 +178,7 @@ export default function Page() {
           </div>
         ))}
 
-{/* <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-10 overflow-hidden space-y-12">
+<div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-10 overflow-hidden space-y-12">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-500">Product Gallery</h2>
         </div>
@@ -197,8 +208,7 @@ export default function Page() {
               </div>
             ))}
           </div>
-      </div> */}
-
+      </div>
 
         {/* Partner Brand Section */}
         <div className="space-y-4">

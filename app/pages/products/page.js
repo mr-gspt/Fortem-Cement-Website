@@ -53,7 +53,7 @@ const page = () => {
 
   <div className="relative mx-auto max-w-7xl px-6">
     {/* Section Header */}
-    <div className="text-center text-black mb-16">
+    {/* <div className="text-center text-black mb-16">
       <h2 className="text-4xl md:text-5xl font-serif">
         Explore Our Products
       </h2>
@@ -61,13 +61,13 @@ const page = () => {
         Discover Fortem’s product lines designed to meet modern construction
         and architectural demands.
       </p>
-    </div>
+    </div> */}
 
     {/* Grid */}
     <div className="grid gap-8 md:grid-cols-3">
       {/* Cement */}
       <a
-        href="/products/cement"
+        href="/pages/products/Cement"
         className="group relative h-[420px] overflow-hidden"
       >
         <Image
@@ -77,8 +77,12 @@ const page = () => {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/40 transition group-hover:bg-black/55" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-white text-3xl font-serif tracking-wide">
+        <div className="absolute top-8 left-8 z-10 flex flex-col items-end">
+          <h3 className="relative uppercase inline-block text-white text-3xl font-bold tracking-wide
+             after:content-[''] after:absolute after:left-0 after:-bottom-1
+             after:h-[2px] after:w-0 after:bg-[#eaaa00]
+             after:transition-all after:duration-300
+             group-hover:after:w-full">
             Cement
           </h3>
         </div>
@@ -86,7 +90,7 @@ const page = () => {
 
       {/* Plywood */}
       <a
-        href="/products/plywood"
+        href="/pages/products/Plywood"
         className="group relative h-[420px] overflow-hidden"
       >
         <Image
@@ -96,8 +100,12 @@ const page = () => {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/40 transition group-hover:bg-black/55" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-white text-3xl font-serif tracking-wide">
+        <div className="absolute top-8 left-8 z-10 flex flex-col items-end">
+          <h3 className="relative uppercase inline-block text-white text-3xl font-bold tracking-wide
+             after:content-[''] after:absolute after:left-0 after:-bottom-1
+             after:h-[2px] after:w-0 after:bg-[#eaaa00]
+             after:transition-all after:duration-300
+             group-hover:after:w-full">
             Plywood
           </h3>
         </div>
@@ -105,7 +113,7 @@ const page = () => {
 
       {/* Boards / Panels */}
       <a
-        href="/products/boards"
+        href="/pages/products/Admix"
         className="group relative h-[420px] overflow-hidden"
       >
         <Image
@@ -115,8 +123,12 @@ const page = () => {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/40 transition group-hover:bg-black/55" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-white text-3xl font-serif tracking-wide">
+        <div className="absolute top-8 left-8 z-10 flex flex-col items-end">
+          <h3 className="relative uppercase inline-block text-white text-3xl font-bold tracking-wide
+             after:content-[''] after:absolute after:left-0 after:-bottom-1
+             after:h-[2px] after:w-0 after:bg-[#eaaa00]
+             after:transition-all after:duration-300
+             group-hover:after:w-full">
             Admix
           </h3>
         </div>
